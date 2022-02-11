@@ -1,0 +1,115 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="ad.css" />
+  <link rel="stylesheet" href="engine.css" />
+  <script type="text/javascript" src="engine.js"></script>
+  <script type="text/javascript" src="game.js"></script>
+  <title>Ready Set Goat! Micro-game</title>
+</head>
+
+<body>
+
+<a href="https://www.readysetgoat.com/platform.html" target="_blank" title="Play Ready Set Goat now!">
+<div id="ad">
+  <div id="preload">
+    <img src="images/pea-run.gif" id="pea1" width="96" height="96" data-sprite-offset-y="-2" alt="The pea enemy" />
+    <img src="images/potato-run-2.gif" id="potato1" width="96" height="96" data-sprite-offset-y="3" alt="The big potato boy"/>
+    <img src="images/hotdog-run.gif" id="hotdog1" width="128" height="64" alt="A very sad hot dog" />
+    <img id="goat-empty" width="64" height="64" data-sprite-offset-y="-5" alt="The Goatagonist!" />
+    <img src="images/goat-run.gif" id="goat-run" alt="The goat running" />
+    <img src="images/goat-jump-up.gif" id="goat-jump-up" alt="The goat jumping" />
+    <img src="images/goat-jump-mid.gif" id="goat-jump-mid" alt="The goat mid jump" />
+    <img src="images/goat-jump-down.gif" id="goat-jump-down" alt="The goat falling" />
+  </div>
+  <div id="sky">
+    <div class="viber vibe-delay-4">
+      <div class="bg-layer slide-up-1">
+        <img src="images/bgfar.gif" alt="Background image" />
+      </div>
+    </div>
+    <div class="viber vibe-delay-3">
+      <div class="bg-layer slide-up-2">
+        <img src="images/bgmid.gif" alt="Background image middle layer" />
+      </div>
+    </div>
+    <div class="viber vibe-delay-2">
+      <div class="bg-layer slide-up-3">
+        <img src="images/bgclose.gif" alt="Background image closer" />
+      </div>
+    </div>
+
+    <div id="game"></div>
+
+    <div id="ground-container" class="viber vibe-delay-1">
+      <div id="ground"></div>
+    </div>
+
+    <div id="carousel">
+      <div class="text-group-1 viber" style="margin-top: 12px">
+        <div class="logo-piece in-n-out text-delay-1">
+          <img src="images/logo-ready.gif" width="234" height="51" alt="Ready..." />
+        </div>
+        <div class="logo-piece in-n-out text-delay-2">
+          <img src="images/logo-set.gif" width="138" height="51" alt="Set..."/>
+        </div>
+        <div class="logo-piece in-n-out text-delay-3">
+          <img src="images/logo-goat.gif" width="204" height="51" alt="Goat!" />
+        </div>
+      </div>
+
+      <div class="text-group-2 viber" style="margin-top: 44px">
+        <div class="logo-piece in-n-out text-delay-1">
+          <img src="images/text-free.gif" width="192" height="51" alt="Free" />
+        </div>
+        <div class="logo-piece in-n-out text-delay-2">
+          <img src="images/text-game.gif" width="210" height="51" alt="Game!" />
+        </div>
+      </div>
+
+      <div class="text-group-3 viber" style="margin-top: 44px">
+        <div class="logo-piece in-n-out text-delay-1">
+          <img src="images/text-no.gif" width="96" height="51" alt="No" />
+        </div>
+        <div class="logo-piece in-n-out text-delay-2">
+          <img src="images/text-ads.gif" width="162" height="51" alt="Ads!" />
+        </div>
+      </div>
+
+      <div class="text-group-4 viber" style="margin-top: 44px">
+        <div class="logo-piece in-n-out text-delay-1">
+          <img src="images/text-play.gif" width="186" height="51" alt="Play" />
+        </div>
+        <div class="logo-piece in-n-out text-delay-2">
+          <img src="images/text-now.gif" width="162" height="51" alt="Now!" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</a>
+
+<script type="text/javascript">
+  /* globals document, setInterval */
+  (function() {
+    var carousel = document.getElementById("carousel");
+    var groups = [];
+
+    function cycleCarousel() {
+      while (carousel.children.length) {
+        var child = carousel.children[0];
+        groups.push(child);
+        carousel.removeChild(child);
+      }
+
+      carousel.appendChild(groups.shift());
+    }
+
+    setInterval(cycleCarousel, 3000);
+    cycleCarousel();
+  })();
+</script>
+
+</body>
+</html>

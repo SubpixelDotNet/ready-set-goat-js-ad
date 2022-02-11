@@ -1,0 +1,188 @@
+
+body {
+  background: white;
+  image-rendering: crisp-edges; /* Firefox's version of pixelated */
+  image-rendering: pixelated;
+  -ms-interpolation-mode: nearest-neighbor;
+
+  margin: 0;
+  padding: 0;
+}
+
+#ad {
+  width: 300px;
+  height: 250px;
+  background: #ff76bf;
+  overflow: hidden;
+  position: relative;
+}
+
+#sky {
+  position: absolute;
+  background: url(images/sky.png);
+  background-size: 1px 100%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bg-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: -10px;
+}
+
+#ground-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 330px;
+}
+
+#ground {
+  background: url(images/ground.gif) 0 0;
+  background-repeat: repeat-x;
+  width: 100%;
+  height: 100%;
+  transform: scale(2);
+}
+
+#game {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes slide-up-1 {
+  0% {
+    transform: translateY(1000px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-up-1 {
+  animation: slide-up-1 0.6s ease-out 0s both;
+}
+
+.slide-up-2 {
+  animation: slide-up-1 0.6s ease-out .1s both;
+}
+
+.slide-up-3 {
+  animation: slide-up-1 0.6s ease-out .2s both;
+}
+
+.slide-up-4 {
+  animation: slide-up-1 0.6s ease-out .3s both;
+}
+
+.logo-piece {
+  margin: 0 auto;
+  display: block;
+  will-change: transform, opacity;
+}
+
+.logo-piece img {
+  margin: 0 auto;
+  display: block;
+}
+
+.logo-piece + .logo-piece {
+  margin-top: 18px;
+}
+
+.slide-logo {
+  animation: slide-logo-no-scale 0.6s ease-out .1s both;
+}
+
+.logo-delay-1 {
+  animation-delay: .1s;
+}
+
+.logo-delay-2 {
+  animation-delay: .3s;
+}
+
+.logo-delay-3 {
+  animation-delay: .6s;
+}
+
+.text {
+  color: white;
+  z-index: 1000;
+  margin: 0 auto;
+  font-family: monospace;
+  font-size: 24px;
+  text-shadow: 1px 1px 1px black;
+  transform: scale(1);
+  text-align: center;
+}
+
+#preload {
+  position: absolute;
+  width: 32px;
+  right: -30px;
+}
+
+@keyframes in-n-out {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+
+  20% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  21% {
+    transform: translateX(0) scale(1);
+  }
+
+  23% {
+    transform: translateX(0) scale(1.1);
+  }
+
+  28% {
+    transform: translateX(0) scale(1);
+  }
+
+  80% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+}
+
+.in-n-out {
+  animation: in-n-out 2s ease-in-out 0s both;
+}
+
+.text-delay-1 {
+  animation-delay: .1s;
+}
+
+.text-delay-2 {
+  animation-delay: .4s;
+}
+
+.text-delay-3 {
+  animation-delay: .7s;
+}
+
+#carousel {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,95 @@
+.sprite {
+  position: absolute;
+  /*transform: scaleX(2) scaleY(2);*/
+}
+
+@keyframes stunned {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.stunned {
+  animation: stunned .5s linear;
+}
+
+.bounding-box {
+  position: absolute;
+  /*outline: 1px solid red;*/
+}
+
+@keyframes vibe {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-2px, 2px);
+  }
+  20% {
+    transform: translate(-2px, -2px);
+  }
+  30% {
+    transform: translate(2px, 2px);
+  }
+  40% {
+    transform: translate(2px, -2px);
+  }
+  50% {
+    transform: translate(1px, 1px);
+  }
+  60% {
+    transform: translate(-1px, -1px);
+  }
+  70% {
+    transform: translate(1px, 1px);
+  }
+  80% {
+    transform: translate(1px, -1px);
+  }
+  90% {
+    transform: translate(-1px, 1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.vibe {
+   animation: vibe 0.15s linear both;
+}
+
+.vibe-delay-1 {
+  animation-delay: 0s;
+}
+
+.vibe-delay-2 {
+  animation-delay: .05s;
+}
+
+.vibe-delay-3 {
+  animation-delay: .1s;
+}
+
+.vibe-delay-4 {
+  animation-delay: .15s;
+}
